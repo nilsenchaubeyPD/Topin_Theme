@@ -2804,7 +2804,8 @@
 *{box-sizing:border-box;font-family:var(--typography-family-font-family-body)}
 button>svg{display:block}
 button:not(:has(>span)):not(:has(>sc-if)){padding:0}
-svg[width="16"]{stroke:currentColor;stroke-width:0.25;stroke-linejoin:round}
+svg{stroke-width:2}
+svg[width="16"]{stroke-width:2.25}
 html,body{margin:0;background:var(--colors-background-bg-primary);font-family:var(--typography-family-font-family-body);color:var(--ink);font-size:14px;line-height:20px;font-weight:400;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
 button,input,select{font-family:inherit;color:inherit;font-variant-numeric:tabular-nums}
 a{color:var(--brand);text-decoration:none}
