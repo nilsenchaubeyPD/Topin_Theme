@@ -1567,7 +1567,7 @@ Component.prototype.render = function render() {
                       {" "}
                       <div style={{flex: "1", minWidth: "0"}}>
                         {" "}
-                        <div style={{display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "16px", paddingBottom: "16px", borderBottom: "1px solid var(--border)"}}>
+                        <div style={{display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "16px", paddingBottom: "20px", borderBottom: "1px solid var(--border)"}}>
                           {" "}
                           <div>
                             <div style={{fontSize: "16px", lineHeight: "24px", fontWeight: "600"}}>
@@ -1592,11 +1592,11 @@ Component.prototype.render = function render() {
                           {" "}
                         </div>
                         {" "}
-                        <div style={{display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: "12px", margin: "16px 0 8px"}}>
+                        <div style={{display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: "16px", margin: "16px 0"}}>
                           {" "}
                           {(V.templates || []).map((p, p$i) => (<React.Fragment key={p$i}>
                             {" "}
-                            <button onClick={p.pick} style={{textAlign: "left", padding: "12px 16px", borderRadius: "10px", border: `1px ${p.borderStyle} ${p.borderColor}`, background: p.bg, cursor: "pointer", display: "flex", flexDirection: "column"}} className="hv30">
+                            <button onClick={p.pick} style={{textAlign: "left", padding: "16px 20px", borderRadius: "10px", border: `1px ${p.borderStyle} ${p.borderColor}`, background: p.bg, cursor: "pointer", display: "flex", flexDirection: "column"}} className="hv30">
                               {" "}
                               <span style={{fontSize: "16px", lineHeight: "24px", fontWeight: "600", color: "var(--ink)"}}>
                                 {I(p.title)}
@@ -1614,7 +1614,7 @@ Component.prototype.render = function render() {
                         {" "}
                         {(V.settings || []).map((t, t$i) => (<React.Fragment key={t$i}>
                           {" "}
-                          <div style={{padding: "12px 0", borderBottom: "1px solid var(--border)"}}>
+                          <div style={{padding: "16px 0", borderBottom: "1px solid var(--border)"}}>
                             {" "}
                             <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", minHeight: "20px"}}>
                               {" "}
@@ -1638,7 +1638,7 @@ Component.prototype.render = function render() {
                             {" "}
                             {t.hasSubToggle && (<>
                               {" "}
-                              <div style={{marginTop: "12px", paddingLeft: "16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px"}}>
+                              <div style={{marginTop: "16px", paddingLeft: "16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px"}}>
                                 {" "}
                                 <span>
                                   {I(t.subLabel)}
@@ -1662,7 +1662,7 @@ Component.prototype.render = function render() {
                             {" "}
                             {t.hasStepper && (<>
                               {" "}
-                              <div style={{marginTop: "12px", paddingLeft: "16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px"}}>
+                              <div style={{marginTop: "16px", paddingLeft: "16px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px"}}>
                                 {" "}
                                 <span>
                                   {I(t.subLabel)}
