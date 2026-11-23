@@ -547,7 +547,7 @@ Component.prototype.render = function render() {
           </g>
         </symbol>
       </svg>
-      <div style={{position: "fixed", left: "50%", bottom: "16px", transform: "translateX(-50%)", zIndex: "2000", display: "flex", gap: "4px", padding: "4px", borderRadius: "12px", background: "var(--colors-zinc-900)", boxShadow: "0px 20px 24px -4px var(--colors-effects-shadows-shadow-xl-01), 0px 8px 8px -4px var(--colors-effects-shadows-shadow-xl-02), 0px 3px 3px -1.5px var(--colors-effects-shadows-shadow-xl-03)"}}>
+      <div data-theme-switch="" style={{position: "fixed", left: "50%", bottom: "16px", transform: "translateX(-50%)", zIndex: "2000", display: "flex", gap: "4px", padding: "4px", borderRadius: "12px", background: "var(--colors-zinc-900)", boxShadow: "0px 20px 24px -4px var(--colors-effects-shadows-shadow-xl-01), 0px 8px 8px -4px var(--colors-effects-shadows-shadow-xl-02), 0px 3px 3px -1.5px var(--colors-effects-shadows-shadow-xl-03)"}}>
         {" "}
         {(V.themeSwitch || []).map((t, t$i) => (<React.Fragment key={t$i}>
           {" "}

@@ -2818,3 +2818,4 @@ input::placeholder{color:var(--muted)}
 @keyframes tin{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes din{from{transform:translateX(32px);opacity:0}to{transform:none;opacity:1}}
 @keyframes fin{from{opacity:0}to{opacity:1}}
+html[data-embed] [data-theme-switch]{display:none !important}
