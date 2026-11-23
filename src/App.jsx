@@ -112,7 +112,7 @@ class Component extends DCLogic {
     const pages = [1,2,3,'…',8,9,10].map(p => ({label:p, gap: p === '…', bg: p === s.page ? 'var(--hover)' : 'transparent', weight: p === s.page ? 600 : 500, color: p === '…' ? 'var(--muted)' : 'var(--ink)', go: () => p !== '…' && set({page:p})}));
     const cur = {...s.cur, b: ASTAT[s.cur.status]};
 
-    const tabs = [['basic','Basic Details'],['sections','Sections Details',4],['advanced','Advanced Options']].map(([k, label, count]) => ({label, count, color: s.tab === k ? 'var(--ink)' : 'var(--muted)', line: s.tab === k ? 'var(--accent)' : 'transparent', pick: () => set({tab:k})}));
+    const tabs = [['basic','Basic Details'],['sections','Sections Details'],['advanced','Advanced Options']].map(([k, label, count]) => ({label, count, color: s.tab === k ? 'var(--ink)' : 'var(--muted)', line: s.tab === k ? 'var(--accent)' : 'transparent', pick: () => set({tab:k})}));
 
     const KP = [['Invited',150,'teal','#i-users','All'],['Attempted',100,'violet','#i-clip','Attempted'],['In Progress',50,'amber','#i-user-share','In Progress'],['Average Score','25.1','brand','#i-target','All','/ 41'],['Shortlisted',30,'sage','#i-user-check','Shortlisted'],['Rejected',15,'rose','#i-user-x','Rejected']];
     const kpiSel = s.kpi ?? 'Invited';
