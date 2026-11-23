@@ -649,7 +649,7 @@ Component.prototype.render = function render() {
           {" "}
           {V.expanded && (<>
             {" "}
-            <div data-screen-label="Credits" style={{position: "relative", overflow: "hidden", isolation: "isolate", padding: "16px", borderRadius: "12px", border: "1px solid var(--colors-semantic-brand-200)", background: "var(--colors-background-bg-primary)", boxShadow: "0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", display: "flex", flexDirection: "column", gap: "12px"}}>
+            <div data-screen-label="Credits" style={{position: "relative", overflow: "hidden", isolation: "isolate", padding: "16px", borderRadius: "12px", background: "var(--colors-background-bg-primary)", boxShadow: "0px 4px 6px -1px color-mix(in srgb, var(--colors-semantic-brand-600) 16%, transparent), 0px 2px 4px -2px color-mix(in srgb, var(--colors-semantic-brand-600) 10%, transparent)", display: "flex", flexDirection: "column", gap: "12px"}}>
               {" "}
               <div aria-hidden="true" style={{position: "absolute", inset: "0", zIndex: "-1", pointerEvents: "none", background: "linear-gradient(180deg, var(--tint) 0%, var(--colors-background-bg-primary) 75%)"}} />
               {" "}
