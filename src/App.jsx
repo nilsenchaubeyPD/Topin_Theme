@@ -650,11 +650,11 @@ Component.prototype.render = function render() {
           {" "}
           {V.expanded && (<>
             {" "}
-            <div data-screen-label="Credits" style={{position: "relative", overflow: "hidden", isolation: "isolate", padding: "16px", borderRadius: "12px", background: "var(--colors-background-bg-primary)", boxShadow: "0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", display: "flex", flexDirection: "column", gap: "12px"}}>
+            <div data-screen-label="Credits" style={{position: "relative", overflow: "hidden", isolation: "isolate", padding: "16px", borderRadius: "12px", border: "1px solid var(--colors-semantic-brand-200)", background: "var(--colors-background-bg-primary)", boxShadow: "0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", display: "flex", flexDirection: "column", gap: "12px"}}>
               {" "}
               <div aria-hidden="true" style={{position: "absolute", inset: "0", zIndex: "-1", pointerEvents: "none", background: "linear-gradient(180deg, var(--tint) 0%, var(--colors-background-bg-primary) 75%)"}} />
               {" "}
-              <div aria-hidden="true" style={{position: "absolute", inset: "0", zIndex: "-1", pointerEvents: "none", backgroundImage: "radial-gradient(circle, var(--colors-semantic-brand-400) 1px, transparent 1.4px)", backgroundSize: "18px 18px", backgroundPosition: "9px 9px", opacity: ".2", WebkitMaskImage: "radial-gradient(ellipse 90% 70% at 50% 55%, var(--colors-base-black) 0%, transparent 75%)", maskImage: "radial-gradient(ellipse 90% 70% at 50% 55%, var(--colors-base-black) 0%, transparent 75%)"}} />
+              <div aria-hidden="true" style={{position: "absolute", inset: "0", zIndex: "-1", pointerEvents: "none", backgroundImage: "radial-gradient(circle at 1px 1px, var(--colors-semantic-brand-300) 1px, transparent 1.2px)", backgroundSize: "10px 10px", backgroundPosition: "4px 4px", WebkitMaskImage: "linear-gradient(180deg, var(--colors-base-black) 0%, transparent 75%)", maskImage: "linear-gradient(180deg, var(--colors-base-black) 0%, transparent 75%)"}} />
               {" "}
               <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px"}}>
                 {" "}
