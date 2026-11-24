@@ -2009,14 +2009,14 @@ Component.prototype.render = function render() {
                   {V.noCandidates && (<>
                     <div style={{padding: "48px 24px", display: "flex", flexDirection: "column", alignItems: "center", gap: "24px", textAlign: "center"}}>
                       <div style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "16px"}}>
-                        <span style={{width: "48px", height: "48px", borderRadius: "10px", border: "1px solid var(--colors-border-border-primary)", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0px 0px 0px 1px var(--colors-effects-shadows-shadow-skeumorphic-inner-border), inset 0px -2px 0px 0px var(--colors-effects-shadows-shadow-skeumorphic-inner), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--colors-foreground-fg-secondary-700, var(--ink))"}}>
+                        <span style={{width: "48px", height: "48px", borderRadius: "10px", border: "1px solid var(--colors-border-border-primary)", background: "var(--colors-background-bg-primary)", boxShadow: "0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--colors-foreground-fg-secondary-700, var(--ink))"}}>
                           {V.emptyIsSearch && (<>
-                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor", strokeWidth: "1"}}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor", strokeWidth: "1.5"}}>
                               <use href="#i-search" x="0" y="0" width="24" height="24" />
                             </svg>
                           </>)}
                           {V.emptyIsFilter && (<>
-                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor", strokeWidth: "1"}}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor", strokeWidth: "1.5"}}>
                               <use href="#i-users" x="0" y="0" width="24" height="24" />
                             </svg>
                           </>)}
