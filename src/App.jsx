@@ -851,7 +851,7 @@ Component.prototype.render = function render() {
                     {" "}
                     <div data-menu="status" style={{position: "relative"}}>
                       {" "}
-                      <button onClick={V.toggleStatusMenu} aria-haspopup="listbox" style={{width: "168px", height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv7">
+                      <button onClick={V.toggleStatusMenu} aria-haspopup="listbox" style={{width: "168px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv7">
                         {" "}
                         <span>
                           {I(V.statusLabel)}
@@ -907,7 +907,7 @@ Component.prototype.render = function render() {
                       {" "}
                     </div>
                     {" "}
-                    <button onClick={V.toggleCreatedBy} style={{height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)", whiteSpace: "nowrap"}} className="hv9">
+                    <button onClick={V.toggleCreatedBy} style={{height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)", whiteSpace: "nowrap"}} className="hv9">
                       {" "}
                       <span>
                         {I(V.createdByLabel)}
@@ -1876,7 +1876,7 @@ Component.prototype.render = function render() {
                       {" "}
                       <div data-menu="cand" style={{position: "relative"}}>
                         {" "}
-                        <button onClick={V.toggleCandMenu} style={{width: "150px", height: "40px", borderRadius: "8px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv35">
+                        <button onClick={V.toggleCandMenu} style={{width: "150px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv35">
                           {" "}
                           <span>
                             {I(V.candLabel)}
@@ -2011,12 +2011,12 @@ Component.prototype.render = function render() {
                       <div style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "16px"}}>
                         <span style={{width: "48px", height: "48px", borderRadius: "10px", border: "1px solid var(--colors-border-border-primary)", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0px 0px 0px 1px var(--colors-effects-shadows-shadow-skeumorphic-inner-border), inset 0px -2px 0px 0px var(--colors-effects-shadows-shadow-skeumorphic-inner), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--colors-foreground-fg-secondary-700, var(--ink))"}}>
                           {V.emptyIsSearch && (<>
-                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor", strokeWidth: "1"}}>
                               <use href="#i-search" x="0" y="0" width="24" height="24" />
                             </svg>
                           </>)}
                           {V.emptyIsFilter && (<>
-                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor", strokeWidth: "1"}}>
                               <use href="#i-users" x="0" y="0" width="24" height="24" />
                             </svg>
                           </>)}
