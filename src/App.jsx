@@ -93,7 +93,7 @@ class Component extends DCLogic {
 
     const navItems = [['Home','#i-dash'],['My Questions','#i-msg'],['Users & Roles','#i-users'],['Integrations','#i-apps']].map(([label, icon]) => {
       const active = label === 'Home';
-      return {label, icon: active ? icon + '-s' : icon, active, current: active ? 'page' : undefined, iconColor: active ? 'var(--nav-icon)' : 'currentColor', bg: active ? 'var(--nav-bg)' : 'transparent', hoverBg: active ? 'var(--nav-bg)' : 'var(--hover)', color: active ? 'var(--nav-ink)' : 'var(--ink)', weight: active ? 600 : 500, tip: collapsed && s.tip === 'nav-' + label, enter: tipOn('nav-' + label), onClick: () => active ? go('list') : this.showToast(label + ' is not part of this prototype')};
+      return {label, icon: active ? icon + '-s' : icon, active, current: active ? 'page' : undefined, iconColor: active ? 'var(--nav-icon)' : 'currentColor', bg: active ? 'var(--nav-bg)' : 'transparent', hoverBg: active ? 'var(--nav-bg)' : 'var(--colors-background-bg-brand-primary)', color: active ? 'var(--nav-ink)' : 'var(--ink)', weight: active ? 600 : 500, tip: collapsed && s.tip === 'nav-' + label, enter: tipOn('nav-' + label), onClick: () => active ? go('list') : this.showToast(label + ' is not part of this prototype')};
     });
     const navBottom = [{label:'Help', tip: collapsed && s.tip === 'nav-Help', enter: tipOn('nav-Help')}];
 
