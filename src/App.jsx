@@ -547,17 +547,6 @@ Component.prototype.render = function render() {
           </g>
         </symbol>
       </svg>
-      <div data-theme-switch="" style={{position: "fixed", left: "50%", bottom: "16px", transform: "translateX(-50%)", zIndex: "2000", display: "flex", gap: "4px", padding: "4px", borderRadius: "12px", background: "var(--colors-zinc-900)", boxShadow: "0px 20px 24px -4px var(--colors-effects-shadows-shadow-xl-01), 0px 8px 8px -4px var(--colors-effects-shadows-shadow-xl-02), 0px 3px 3px -1.5px var(--colors-effects-shadows-shadow-xl-03)"}}>
-        {" "}
-        {(V.themeSwitch || []).map((t, t$i) => (<React.Fragment key={t$i}>
-          {" "}
-          <button onClick={t.pick} style={{height: "32px", padding: "0 12px", borderRadius: "8px", border: "none", fontSize: "13px", fontWeight: "600", cursor: "pointer", background: t.bg, color: t.fg, display: "flex", alignItems: "center", gap: "8px"}} className="hv1">
-            <span style={{width: "12px", height: "12px", borderRadius: "50%", background: t.dot}} />
-            {I(t.name)}
-          </button>
-          {" "}
-        </React.Fragment>))}
-      </div>
       <div style={{display: "flex", minHeight: "100vh", background: "var(--colors-background-bg-primary)"}}>
         <aside data-screen-label="Sidebar" style={{position: "sticky", top: "0", height: "100vh", flex: "none", width: V.sideW, padding: V.sidePad, borderRight: "1px solid var(--border)", background: "var(--sidebar)", display: "flex", flexDirection: "column", transition: "width .18s ease", zIndex: "20"}}>
           {" "}
@@ -585,7 +574,7 @@ Component.prototype.render = function render() {
             </>)}
             {" "}
             {V.expanded && (<>
-              <button aria-label={V.sideTip} data-tip={V.sideTip} data-tip-side={V.sideTipSide} onClick={V.toggleSide} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flex: "none"}} className="hv2">
+              <button aria-label={V.sideTip} data-tip={V.sideTip} data-tip-side={V.sideTipSide} onClick={V.toggleSide} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flex: "none"}} className="hv1">
                 {" "}
                 <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                   <use href="#i-sidebar" x="0" y="0" width="24" height="24" />
@@ -598,7 +587,7 @@ Component.prototype.render = function render() {
           {" "}
           {V.collapsed && (<>
             {" "}
-            <button aria-label="Expand sidebar" data-tip="Expand sidebar" data-tip-side="right" onClick={V.toggleSide} style={{marginTop: "12px", width: "44px", height: "44px", border: "none", borderRadius: "10px", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv3">
+            <button aria-label="Expand sidebar" data-tip="Expand sidebar" data-tip-side="right" onClick={V.toggleSide} style={{marginTop: "12px", width: "44px", height: "44px", border: "none", borderRadius: "10px", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv2">
               {" "}
               <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                 <use href="#i-sidebar" x="0" y="0" width="24" height="24" />
@@ -618,7 +607,7 @@ Component.prototype.render = function render() {
                   <span style={{position: "absolute", left: V.barLeft, top: "10px", bottom: "10px", width: "3px", borderRadius: "0 3px 3px 0", background: "var(--accent)"}} />
                 </>)}
                 {" "}
-                <button aria-current={n.current} onClick={n.onClick} onMouseEnter={n.enter} onMouseLeave={V.tipOff} aria-label={n.label} style={{width: V.itemW, height: "44px", borderRadius: "10px", padding: `0 ${V.itemPad}`, display: "flex", alignItems: "center", justifyContent: V.itemJustify, gap: "12px", border: "none", background: n.bg, color: n.color, fontSize: "14px", lineHeight: "20px", fontWeight: n.weight, cursor: "pointer", textAlign: "left", whiteSpace: "nowrap", "--hv4-0": n.hoverBg}} className="hv4">
+                <button aria-current={n.current} onClick={n.onClick} onMouseEnter={n.enter} onMouseLeave={V.tipOff} aria-label={n.label} style={{width: V.itemW, height: "44px", borderRadius: "10px", padding: `0 ${V.itemPad}`, display: "flex", alignItems: "center", justifyContent: V.itemJustify, gap: "12px", border: "none", background: n.bg, color: n.color, fontSize: "14px", lineHeight: "20px", fontWeight: n.weight, cursor: "pointer", textAlign: "left", whiteSpace: "nowrap", "--hv3-0": n.hoverBg}} className="hv3">
                   {" "}
                   <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor", color: n.iconColor}}>
                     <use href={n.icon} x="0" y="0" width="24" height="24" />
@@ -754,7 +743,7 @@ Component.prototype.render = function render() {
               {" "}
               <div style={{position: "relative"}}>
                 {" "}
-                <button onMouseEnter={n.enter} onMouseLeave={V.tipOff} aria-label={n.label} style={{width: V.itemW, height: "44px", borderRadius: "10px", padding: `0 ${V.itemPad}`, display: "flex", alignItems: "center", justifyContent: V.itemJustify, gap: "12px", border: "none", background: "transparent", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", textAlign: "left"}} className="hv5">
+                <button onMouseEnter={n.enter} onMouseLeave={V.tipOff} aria-label={n.label} style={{width: V.itemW, height: "44px", borderRadius: "10px", padding: `0 ${V.itemPad}`, display: "flex", alignItems: "center", justifyContent: V.itemJustify, gap: "12px", border: "none", background: "transparent", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", textAlign: "left"}} className="hv4">
                   {" "}
                   <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                     <use href="#i-help" x="0" y="0" width="24" height="24" />
@@ -822,7 +811,7 @@ Component.prototype.render = function render() {
                   {" "}
                   <div style={{display: "flex", gap: "12px"}}>
                     {" "}
-                    <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv6">
+                    <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv5">
                       {" "}
                       <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor", color: "var(--colors-foreground-fg-brand-primary-600)"}}>
                         <use href="#i-sparkles" x="0" y="0" width="24" height="24" />
@@ -830,7 +819,7 @@ Component.prototype.render = function render() {
                       {"Create Assessment using AI "}
                     </button>
                     {" "}
-                    <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--brand)", background: "var(--brand)", color: "var(--colors-text-text-primary-on-brand)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv7">
+                    <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--brand)", background: "var(--brand)", color: "var(--colors-text-text-primary-on-brand)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv6">
                       {" "}
                       <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                         <use href="#i-plus" x="0" y="0" width="24" height="24" />
@@ -862,7 +851,7 @@ Component.prototype.render = function render() {
                     {" "}
                     <div data-menu="status" style={{position: "relative"}}>
                       {" "}
-                      <button onClick={V.toggleStatusMenu} aria-haspopup="listbox" style={{width: "168px", height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv8">
+                      <button onClick={V.toggleStatusMenu} aria-haspopup="listbox" style={{width: "168px", height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv7">
                         {" "}
                         <span>
                           {I(V.statusLabel)}
@@ -888,7 +877,7 @@ Component.prototype.render = function render() {
                             {" "}
                             {o.isOption && (<>
                               {" "}
-                              <button role="option" onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: `8px 10px 8px ${o.padL}`, display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left"}} className="hv9">
+                              <button role="option" onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: `8px 10px 8px ${o.padL}`, display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left"}} className="hv8">
                                 {" "}
                                 <span style={{flex: "1"}}>
                                   {I(o.label)}
@@ -918,7 +907,7 @@ Component.prototype.render = function render() {
                       {" "}
                     </div>
                     {" "}
-                    <button onClick={V.toggleCreatedBy} style={{height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)", whiteSpace: "nowrap"}} className="hv10">
+                    <button onClick={V.toggleCreatedBy} style={{height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)", whiteSpace: "nowrap"}} className="hv9">
                       {" "}
                       <span>
                         {I(V.createdByLabel)}
@@ -930,7 +919,7 @@ Component.prototype.render = function render() {
                       {" "}
                     </button>
                     {" "}
-                    <button aria-label="Refresh assessments" data-tip="Refresh assessments" onClick={V.refresh} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv11">
+                    <button aria-label="Refresh assessments" data-tip="Refresh assessments" onClick={V.refresh} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv10">
                       {" "}
                       <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                         <use href="#i-refresh" x="0" y="0" width="24" height="24" />
@@ -1007,7 +996,7 @@ Component.prototype.render = function render() {
                         {" "}
                         {(V.rows || []).map((r, r$i) => (<React.Fragment key={r$i}>
                           {" "}
-                          <div role="button" tabIndex="0" onClick={r.open} onKeyDown={r.key} style={{display: "grid", gridTemplateColumns: "minmax(0,299fr) minmax(0,177fr) minmax(0,176fr) minmax(0,177fr) minmax(0,84fr) minmax(0,148fr)", height: "64px", alignItems: "center", borderTop: r.divider, cursor: "pointer", background: "var(--colors-background-bg-primary)"}} className="hv12">
+                          <div role="button" tabIndex="0" onClick={r.open} onKeyDown={r.key} style={{display: "grid", gridTemplateColumns: "minmax(0,299fr) minmax(0,177fr) minmax(0,176fr) minmax(0,177fr) minmax(0,84fr) minmax(0,148fr)", height: "64px", alignItems: "center", borderTop: r.divider, cursor: "pointer", background: "var(--colors-background-bg-primary)"}} className="hv11">
                             {" "}
                             <div style={{padding: "0 20px", fontWeight: "500", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>
                               {I(r.name)}
@@ -1038,7 +1027,7 @@ Component.prototype.render = function render() {
                               {" "}
                               <div style={{position: "relative", display: "flex"}}>
                                 {" "}
-                                <button aria-label="View Statistics" onClick={r.stats} onMouseEnter={r.enterS} onMouseLeave={V.tipOff} onFocus={r.enterS} onBlur={V.tipOff} style={{width: "36px", height: "36px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv13">
+                                <button aria-label="View Statistics" onClick={r.stats} onMouseEnter={r.enterS} onMouseLeave={V.tipOff} onFocus={r.enterS} onBlur={V.tipOff} style={{width: "36px", height: "36px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv12">
                                   {" "}
                                   <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                                     <use href="#i-chart" x="0" y="0" width="24" height="24" />
@@ -1057,7 +1046,7 @@ Component.prototype.render = function render() {
                               {" "}
                               <div style={{position: "relative", display: "flex"}}>
                                 {" "}
-                                <button aria-label="Clone Assessment" onClick={r.clone} onMouseEnter={r.enterC} onMouseLeave={V.tipOff} onFocus={r.enterC} onBlur={V.tipOff} style={{width: "36px", height: "36px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv14">
+                                <button aria-label="Clone Assessment" onClick={r.clone} onMouseEnter={r.enterC} onMouseLeave={V.tipOff} onFocus={r.enterC} onBlur={V.tipOff} style={{width: "36px", height: "36px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv13">
                                   {" "}
                                   <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                                     <use href="#i-copy" x="0" y="0" width="24" height="24" />
@@ -1112,7 +1101,7 @@ Component.prototype.render = function render() {
                           {" "}
                           <div data-menu="rows" style={{position: "relative", width: "80px"}}>
                             {" "}
-                            <button onClick={V.toggle_rows} aria-haspopup="listbox" style={{width: "80px", height: V.rowsH, borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv15">
+                            <button onClick={V.toggle_rows} aria-haspopup="listbox" style={{width: "80px", height: V.rowsH, borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv14">
                               <span>
                                 {I(V.label_rows)}
                               </span>
@@ -1127,7 +1116,7 @@ Component.prototype.render = function render() {
                                 {" "}
                                 {(V.opts_rows || []).map((o, o$i) => (<React.Fragment key={o$i}>
                                   {" "}
-                                  <button role="option" onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: "8px 10px 8px 8px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left", whiteSpace: "nowrap"}} className="hv16">
+                                  <button role="option" onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: "8px 10px 8px 8px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left", whiteSpace: "nowrap"}} className="hv15">
                                     <span style={{flex: "1"}}>
                                       {I(o.label)}
                                     </span>
@@ -1152,13 +1141,13 @@ Component.prototype.render = function render() {
                         {" "}
                         <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
                           {" "}
-                          <button aria-label="First page" data-tip="First page" onClick={V.firstPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv17">
+                          <button aria-label="First page" data-tip="First page" onClick={V.firstPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv16">
                             <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                               <use href="#i-first" x="0" y="0" width="24" height="24" />
                             </svg>
                           </button>
                           {" "}
-                          <button aria-label="Previous page" data-tip="Previous page" onClick={V.prevPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv18">
+                          <button aria-label="Previous page" data-tip="Previous page" onClick={V.prevPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv17">
                             <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                               <use href="#i-left" x="0" y="0" width="24" height="24" />
                             </svg>
@@ -1168,7 +1157,7 @@ Component.prototype.render = function render() {
                             {" "}
                             {(V.pages || []).map((p, p$i) => (<React.Fragment key={p$i}>
                               {" "}
-                              <button onClick={p.go} disabled={p.gap} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: p.bg, fontSize: "14px", lineHeight: "20px", fontWeight: p.weight, color: p.color, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center"}} className="hv19">
+                              <button onClick={p.go} disabled={p.gap} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: p.bg, fontSize: "14px", lineHeight: "20px", fontWeight: p.weight, color: p.color, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center"}} className="hv18">
                                 {I(p.label)}
                               </button>
                               {" "}
@@ -1176,13 +1165,13 @@ Component.prototype.render = function render() {
                             {" "}
                           </div>
                           {" "}
-                          <button aria-label="Next page" data-tip="Next page" onClick={V.nextPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv20">
+                          <button aria-label="Next page" data-tip="Next page" onClick={V.nextPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv19">
                             <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                               <use href="#i-right" x="0" y="0" width="24" height="24" />
                             </svg>
                           </button>
                           {" "}
-                          <button aria-label="Last page" data-tip="Last page" onClick={V.lastPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv21">
+                          <button aria-label="Last page" data-tip="Last page" onClick={V.lastPage} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv20">
                             <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                               <use href="#i-last" x="0" y="0" width="24" height="24" />
                             </svg>
@@ -1203,7 +1192,7 @@ Component.prototype.render = function render() {
                 {" "}
                 <div data-group="assessment-overview" style={{display: "flex", flexDirection: "column", gap: "12px"}}>
                   {" "}
-                  <button onClick={V.goList} style={{height: "28px", display: "inline-flex", alignItems: "center", gap: "6px", border: "none", background: "transparent", padding: "0 4px 0 0", color: "var(--muted)", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", borderRadius: "6px"}} className="hv22">
+                  <button onClick={V.goList} style={{height: "28px", display: "inline-flex", alignItems: "center", gap: "6px", border: "none", background: "transparent", padding: "0 4px 0 0", color: "var(--muted)", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", borderRadius: "6px"}} className="hv21">
                     {" "}
                     <svg width="16" height="16" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
                       <use href="#i-back" />
@@ -1293,7 +1282,7 @@ Component.prototype.render = function render() {
                             {"14 Nov 2026, 12:00 AM"}
                           </span>
                           {" "}
-                          <button aria-label="Edit End Date" data-tip="Edit End Date" style={{width: "28px", height: "28px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv23">
+                          <button aria-label="Edit End Date" data-tip="Edit End Date" style={{width: "28px", height: "28px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv22">
                             <svg width="16" height="16" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
                               <use href="#i-pencil" />
                             </svg>
@@ -1307,7 +1296,7 @@ Component.prototype.render = function render() {
                     {" "}
                     <div style={{display: "flex", alignItems: "center", gap: "12px"}}>
                       {" "}
-                      <button onClick={V.cloneCur} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 10px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--colors-text-text-brand-secondary-700)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv24">
+                      <button onClick={V.cloneCur} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 10px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--colors-text-text-brand-secondary-700)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv23">
                         {" "}
                         <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                           <use href="#i-copy" x="0" y="0" width="24" height="24" />
@@ -1315,7 +1304,7 @@ Component.prototype.render = function render() {
                         {"Clone Assessment "}
                       </button>
                       {" "}
-                      <button onClick={V.goStats} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv25">
+                      <button onClick={V.goStats} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv24">
                         {" "}
                         <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                           <use href="#i-chart" x="0" y="0" width="24" height="24" />
@@ -1323,7 +1312,7 @@ Component.prototype.render = function render() {
                         {"View Statistics "}
                       </button>
                       {" "}
-                      <button onClick={V.openDrawer} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--brand)", background: "var(--brand)", color: "var(--colors-text-text-primary-on-brand)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv26">
+                      <button onClick={V.openDrawer} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--brand)", background: "var(--brand)", color: "var(--colors-text-text-primary-on-brand)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv25">
                         {" "}
                         <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                           <use href="#i-user-plus" x="0" y="0" width="24" height="24" />
@@ -1343,7 +1332,7 @@ Component.prototype.render = function render() {
                     {" "}
                     {(V.tabs || []).map((t, t$i) => (<React.Fragment key={t$i}>
                       {" "}
-                      <button role="tab" onClick={t.pick} style={{display: "flex", alignItems: "center", gap: "8px", padding: "0 2px 12px", border: "none", background: "transparent", fontSize: "14px", lineHeight: "20px", fontWeight: "600", color: t.color, boxShadow: `inset 0 -2px 0 ${t.line}`, marginBottom: "-1px", cursor: "pointer", borderRadius: "4px 4px 0 0"}} className="hv27">
+                      <button role="tab" onClick={t.pick} style={{display: "flex", alignItems: "center", gap: "8px", padding: "0 2px 12px", border: "none", background: "transparent", fontSize: "14px", lineHeight: "20px", fontWeight: "600", color: t.color, boxShadow: `inset 0 -2px 0 ${t.line}`, marginBottom: "-1px", cursor: "pointer", borderRadius: "4px 4px 0 0"}} className="hv26">
                         {" "}
                         <span>
                           {I(t.label)}
@@ -1443,7 +1432,7 @@ Component.prototype.render = function render() {
                           {" "}
                         </div>
                         {" "}
-                        <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 10px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--colors-text-text-brand-secondary-700)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv28">
+                        <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 10px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--colors-text-text-brand-secondary-700)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv27">
                           {"View Invigilator Page"}
                           <svg width="16" height="16" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
                             <use href="#i-ext" />
@@ -1595,7 +1584,7 @@ Component.prototype.render = function render() {
                         {" "}
                         {(V.advNav || []).map((a, a$i) => (<React.Fragment key={a$i}>
                           {" "}
-                          <button onClick={a.pick} style={{height: "36px", borderRadius: "8px", border: "none", padding: "0 10px", textAlign: "left", background: a.bg, fontSize: "14px", lineHeight: "20px", fontWeight: a.weight, color: a.color, cursor: "pointer"}} className="hv29">
+                          <button onClick={a.pick} style={{height: "36px", borderRadius: "8px", border: "none", padding: "0 10px", textAlign: "left", background: a.bg, fontSize: "14px", lineHeight: "20px", fontWeight: a.weight, color: a.color, cursor: "pointer"}} className="hv28">
                             {I(a.label)}
                           </button>
                           {" "}
@@ -1634,7 +1623,7 @@ Component.prototype.render = function render() {
                           {" "}
                           {(V.templates || []).map((p, p$i) => (<React.Fragment key={p$i}>
                             {" "}
-                            <button onClick={p.pick} style={{textAlign: "left", padding: "16px 20px", borderRadius: "10px", border: `1px ${p.borderStyle} ${p.borderColor}`, background: p.bg, cursor: "pointer", display: "flex", flexDirection: "column"}} className="hv30">
+                            <button onClick={p.pick} style={{textAlign: "left", padding: "16px 20px", borderRadius: "10px", border: `1px ${p.borderStyle} ${p.borderColor}`, background: p.bg, cursor: "pointer", display: "flex", flexDirection: "column"}} className="hv29">
                               {" "}
                               <span style={{fontSize: "16px", lineHeight: "24px", fontWeight: "600", color: "var(--ink)"}}>
                                 {I(p.title)}
@@ -1714,13 +1703,13 @@ Component.prototype.render = function render() {
                                   {" "}
                                   <div style={{display: "flex", flexDirection: "column", borderLeft: "1px solid var(--border)"}}>
                                     {" "}
-                                    <button aria-label="Increase" onClick={V.warnUp} style={{flex: "1", width: "24px", border: "none", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: "var(--muted)", padding: "0"}} className="hv31">
+                                    <button aria-label="Increase" onClick={V.warnUp} style={{flex: "1", width: "24px", border: "none", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: "var(--muted)", padding: "0"}} className="hv30">
                                       <svg width="12" height="12" viewBox="0 0 24 24" style={{fill: "currentColor"}}>
                                         <use href="#i-up" />
                                       </svg>
                                     </button>
                                     {" "}
-                                    <button aria-label="Decrease" onClick={V.warnDown} style={{flex: "1", width: "24px", border: "none", borderTop: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: "var(--muted)", padding: "0"}} className="hv32">
+                                    <button aria-label="Decrease" onClick={V.warnDown} style={{flex: "1", width: "24px", border: "none", borderTop: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: "var(--muted)", padding: "0"}} className="hv31">
                                       <svg width="12" height="12" viewBox="0 0 24 24" style={{fill: "currentColor"}}>
                                         <use href="#i-down" />
                                       </svg>
@@ -1752,7 +1741,7 @@ Component.prototype.render = function render() {
                 {" "}
                 <div>
                   {" "}
-                  <button onClick={V.goBackFromStats} style={{height: "28px", display: "inline-flex", alignItems: "center", gap: "6px", border: "none", background: "transparent", padding: "0 4px 0 0", color: "var(--muted)", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", borderRadius: "6px"}} className="hv33">
+                  <button onClick={V.goBackFromStats} style={{height: "28px", display: "inline-flex", alignItems: "center", gap: "6px", border: "none", background: "transparent", padding: "0 4px 0 0", color: "var(--muted)", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", borderRadius: "6px"}} className="hv32">
                     {" "}
                     <svg width="16" height="16" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
                       <use href="#i-back" />
@@ -1799,7 +1788,7 @@ Component.prototype.render = function render() {
                           {"14 November, 12:00 AM"}
                         </span>
                         {" "}
-                        <button aria-label="Candidates are still taking this assessment." data-tip="Candidates are still taking this assessment." style={{width: "24px", height: "24px", borderRadius: "6px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: "0"}} className="hv34">
+                        <button aria-label="Candidates are still taking this assessment." data-tip="Candidates are still taking this assessment." style={{width: "24px", height: "24px", borderRadius: "6px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: "0"}} className="hv33">
                           {" "}
                           <svg width="16" height="16" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
                             <use href="#i-info" />
@@ -1809,7 +1798,7 @@ Component.prototype.render = function render() {
                         {" "}
                       </div>
                       {" "}
-                      <button onClick={V.download} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv35">
+                      <button onClick={V.download} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv34">
                         {" "}
                         <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                           <use href="#i-download" x="0" y="0" width="24" height="24" />
@@ -1887,7 +1876,7 @@ Component.prototype.render = function render() {
                       {" "}
                       <div data-menu="cand" style={{position: "relative"}}>
                         {" "}
-                        <button onClick={V.toggleCandMenu} style={{width: "150px", height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv36">
+                        <button onClick={V.toggleCandMenu} style={{width: "150px", height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv35">
                           {" "}
                           <span>
                             {I(V.candLabel)}
@@ -1905,7 +1894,7 @@ Component.prototype.render = function render() {
                             {" "}
                             {(V.candOptions || []).map((o, o$i) => (<React.Fragment key={o$i}>
                               {" "}
-                              <button onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: "8px 10px 8px 8px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left"}} className="hv37">
+                              <button onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: "8px 10px 8px 8px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left"}} className="hv36">
                                 {" "}
                                 <span style={{flex: "1"}}>
                                   {I(o.label)}
@@ -1958,7 +1947,7 @@ Component.prototype.render = function render() {
                   {" "}
                   {(V.candidates || []).map((c, c$i) => (<React.Fragment key={c$i}>
                     {" "}
-                    <div style={{display: "grid", gridTemplateColumns: "72px 2fr 1.3fr 1.2fr 1.1fr 72px", height: "64px", alignItems: "center", borderTop: c.divider}} className="hv38">
+                    <div style={{display: "grid", gridTemplateColumns: "72px 2fr 1.3fr 1.2fr 1.1fr 72px", height: "64px", alignItems: "center", borderTop: c.divider}} className="hv37">
                       {" "}
                       <div style={{padding: "0 20px", color: "var(--muted)"}}>
                         {I(c.sno)}
@@ -2012,7 +2001,7 @@ Component.prototype.render = function render() {
                       {" "}
                       <div style={{padding: "0 20px", display: "flex"}}>
                         {" "}
-                        <button aria-label="View candidate details" data-tip="View candidate details" style={{width: "36px", height: "36px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv39">
+                        <button aria-label="View candidate details" data-tip="View candidate details" style={{width: "36px", height: "36px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv38">
                           <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                             <use href="#i-right" x="0" y="0" width="24" height="24" />
                           </svg>
@@ -2032,7 +2021,7 @@ Component.prototype.render = function render() {
                   {" "}
                   <div style={{minHeight: "65px", padding: "12px 20px", borderTop: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px"}}>
                     {" "}
-                    <button onClick={V.candPrev} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv40">
+                    <button onClick={V.candPrev} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv39">
                       <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                         <use href="#i-left" x="0" y="0" width="24" height="24" />
                       </svg>
@@ -2043,7 +2032,7 @@ Component.prototype.render = function render() {
                       {" "}
                       {(V.candPages || []).map((p, p$i) => (<React.Fragment key={p$i}>
                         {" "}
-                        <button onClick={p.go} disabled={p.gap} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: p.bg, fontSize: "14px", lineHeight: "20px", fontWeight: p.weight, color: p.color, cursor: "pointer"}} className="hv41">
+                        <button onClick={p.go} disabled={p.gap} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: p.bg, fontSize: "14px", lineHeight: "20px", fontWeight: p.weight, color: p.color, cursor: "pointer"}} className="hv40">
                           {I(p.label)}
                         </button>
                         {" "}
@@ -2051,7 +2040,7 @@ Component.prototype.render = function render() {
                       {" "}
                     </div>
                     {" "}
-                    <button onClick={V.candNext} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv42">
+                    <button onClick={V.candNext} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv41">
                       {"Next"}
                       <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                         <use href="#i-right" x="0" y="0" width="24" height="24" />
@@ -2089,7 +2078,7 @@ Component.prototype.render = function render() {
               </div>
             </div>
             {" "}
-            <button aria-label="Close" data-tip="Close" data-tip-side="bottom" onClick={V.closeDrawer} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv43">
+            <button aria-label="Close" data-tip="Close" data-tip-side="bottom" onClick={V.closeDrawer} style={{width: "40px", height: "40px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv42">
               <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                 <use href="#i-x" x="0" y="0" width="24" height="24" />
               </svg>
@@ -2121,7 +2110,7 @@ Component.prototype.render = function render() {
                 {" "}
                 <div data-menu="inv" style={{position: "relative", width: "220px", alignSelf: "flex-start"}}>
                   {" "}
-                  <button onClick={V.toggle_inv} aria-haspopup="listbox" style={{width: "220px", height: V.invH, borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv44">
+                  <button onClick={V.toggle_inv} aria-haspopup="listbox" style={{width: "220px", height: V.invH, borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv43">
                     <span>
                       {I(V.label_inv)}
                     </span>
@@ -2136,7 +2125,7 @@ Component.prototype.render = function render() {
                       {" "}
                       {(V.opts_inv || []).map((o, o$i) => (<React.Fragment key={o$i}>
                         {" "}
-                        <button role="option" onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: "8px 10px 8px 8px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left", whiteSpace: "nowrap"}} className="hv45">
+                        <button role="option" onClick={o.pick} style={{width: "calc(100% - 8px)", margin: "0 4px", height: "40px", borderRadius: "8px", border: "none", background: o.bg, padding: "8px 10px 8px 8px", display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", color: "var(--ink)", cursor: "pointer", textAlign: "left", whiteSpace: "nowrap"}} className="hv44">
                           <span style={{flex: "1"}}>
                             {I(o.label)}
                           </span>
@@ -2188,7 +2177,7 @@ Component.prototype.render = function render() {
                       {" "}
                       {v.removable && (<>
                         {" "}
-                        <button aria-label="Remove row" data-tip="Remove row" onClick={v.remove} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: "0"}} className="hv46">
+                        <button aria-label="Remove row" data-tip="Remove row" onClick={v.remove} style={{width: "40px", height: "40px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: "0"}} className="hv45">
                           <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
                             <use href="#i-x" x="0" y="0" width="24" height="24" />
                           </svg>
@@ -2204,7 +2193,7 @@ Component.prototype.render = function render() {
                 {" "}
               </div>
               {" "}
-              <button onClick={V.addInviteRow} style={{alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: "6px", padding: "0", border: "none", borderRadius: "4px", background: "transparent", color: "var(--colors-text-text-brand-secondary-700)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv47">
+              <button onClick={V.addInviteRow} style={{alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: "6px", padding: "0", border: "none", borderRadius: "4px", background: "transparent", color: "var(--colors-text-text-brand-secondary-700)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv46">
                 <svg width="16" height="16" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
                   <use href="#i-plus" />
                 </svg>
@@ -2232,7 +2221,7 @@ Component.prototype.render = function render() {
                   </div>
                 </div>
                 {" "}
-                <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv48">
+                <button style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv47">
                   {"Choose File"}
                 </button>
                 {" "}
@@ -2244,11 +2233,11 @@ Component.prototype.render = function render() {
           {" "}
           <div style={{padding: "16px 20px", borderTop: "1px solid var(--border)", display: "flex", justifyContent: "flex-end", gap: "12px"}}>
             {" "}
-            <button onClick={V.closeDrawer} style={{height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv49">
+            <button onClick={V.closeDrawer} style={{height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv48">
               {"Cancel"}
             </button>
             {" "}
-            <button onClick={V.sendInvite} style={{height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--brand)", background: "var(--brand)", color: "var(--colors-text-text-primary-on-brand)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv50">
+            <button onClick={V.sendInvite} style={{height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--brand)", background: "var(--brand)", color: "var(--colors-text-text-primary-on-brand)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv49">
               {"Send Invite"}
             </button>
             {" "}
