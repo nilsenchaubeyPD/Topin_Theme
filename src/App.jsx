@@ -184,7 +184,7 @@ class Component extends DCLogic {
       advNav, templates, settings, master: {...sw(tg.master), toggle: toggle('master')},
       warnings: s.warnings, warnUp: () => set({warnings: Math.min(20, s.warnings + 1)}), warnDown: () => set({warnings: Math.max(1, s.warnings - 1)}),
       download: () => this.showToast('Results download started'),
-      kpis, candidates, noCandidates: candidates.length === 0, emptyText: cq ? 'Your search “' + s.candSearch.trim() + '” did not match any candidates. Try a different name, phone or email.' : 'No ' + (s.cand === 'All' ? '' : s.cand.toLowerCase() + ' ') + 'candidates on this page. Try another status or page.', clearCand: () => set({cand:'All', candSearch:'', candPage:1, kpi:'Invited'}), candSearch: s.candSearch, onCandSearch: e => set({candSearch:e.target.value}),
+      kpis, candidates, noCandidates: candidates.length === 0, emptyText: cq ? 'Your search “' + s.candSearch.trim() + '” did not match any candidates. Try a different name, phone or email.' : 'No ' + (s.cand === 'All' ? '' : s.cand.toLowerCase() + ' ') + 'candidates on this page. Try another status or page.', clearCand: () => set({cand:'All', candSearch:'', candPage:1, kpi:'Invited'}), emptyIsSearch: !!cq, emptyIsFilter: !cq, candSearch: s.candSearch, onCandSearch: e => set({candSearch:e.target.value}),
       candLabel: s.cand === 'All' ? 'All statuses' : s.cand, candMenuOpen: s.menu === 'cand', candOptions,
       toggleCandMenu: () => set({menu: s.menu === 'cand' ? null : 'cand'}),
       candPages, candPrev: () => set({candPage: Math.max(1, s.candPage - 1)}), candNext: () => set({candPage: Math.min(15, s.candPage + 1)}),
@@ -1876,7 +1876,7 @@ Component.prototype.render = function render() {
                       {" "}
                       <div data-menu="cand" style={{position: "relative"}}>
                         {" "}
-                        <button onClick={V.toggleCandMenu} style={{width: "150px", height: "40px", borderRadius: "10px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv35">
+                        <button onClick={V.toggleCandMenu} style={{width: "150px", height: "40px", borderRadius: "8px", border: "none", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0 0 0 1px var(--border), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", padding: "0 12px 0 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", fontSize: "14px", lineHeight: "20px", fontWeight: "500", cursor: "pointer", color: "var(--ink)"}} className="hv35">
                           {" "}
                           <span>
                             {I(V.candLabel)}
@@ -2010,9 +2010,16 @@ Component.prototype.render = function render() {
                     <div style={{padding: "48px 24px", display: "flex", flexDirection: "column", alignItems: "center", gap: "24px", textAlign: "center"}}>
                       <div style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "16px"}}>
                         <span style={{width: "48px", height: "48px", borderRadius: "10px", border: "1px solid var(--colors-border-border-primary)", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0px 0px 0px 1px var(--colors-effects-shadows-shadow-skeumorphic-inner-border), inset 0px -2px 0px 0px var(--colors-effects-shadows-shadow-skeumorphic-inner), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--colors-foreground-fg-secondary-700, var(--ink))"}}>
-                          <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
-                            <use href="#i-search" x="0" y="0" width="24" height="24" />
-                          </svg>
+                          {V.emptyIsSearch && (<>
+                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
+                              <use href="#i-search" x="0" y="0" width="24" height="24" />
+                            </svg>
+                          </>)}
+                          {V.emptyIsFilter && (<>
+                            <svg width="24" height="24" viewBox="0 0 24 24" style={{flex: "none", fill: "currentColor"}}>
+                              <use href="#i-users" x="0" y="0" width="24" height="24" />
+                            </svg>
+                          </>)}
                         </span>
                         <div style={{display: "flex", flexDirection: "column", gap: "4px", maxWidth: "100%"}}>
                           <div style={{fontSize: "16px", lineHeight: "24px", fontWeight: "600", color: "var(--colors-text-text-primary-900)"}}>
