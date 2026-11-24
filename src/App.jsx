@@ -2014,16 +2014,16 @@ Component.prototype.render = function render() {
                             <use href="#i-search" x="0" y="0" width="24" height="24" />
                           </svg>
                         </span>
-                        <div style={{display: "flex", flexDirection: "column", gap: "4px", maxWidth: "352px"}}>
+                        <div style={{display: "flex", flexDirection: "column", gap: "4px", maxWidth: "100%"}}>
                           <div style={{fontSize: "16px", lineHeight: "24px", fontWeight: "600", color: "var(--colors-text-text-primary-900)"}}>
                             {"No candidates found"}
                           </div>
-                          <div style={{fontSize: "14px", lineHeight: "20px", color: "var(--colors-text-text-tertiary-600)"}}>
+                          <div style={{fontSize: "14px", lineHeight: "20px", color: "var(--colors-text-text-tertiary-600)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>
                             {I(V.emptyText)}
                           </div>
                         </div>
                       </div>
-                      <button onClick={V.clearCand} style={{height: "36px", padding: "8px 14px", borderRadius: "8px", border: "1px solid var(--colors-border-border-primary)", background: "var(--colors-background-bg-primary)", boxShadow: "inset 0px 0px 0px 1px var(--colors-effects-shadows-shadow-skeumorphic-inner-border), inset 0px -2px 0px 0px var(--colors-effects-shadows-shadow-skeumorphic-inner), 0px 1px 2px 0px var(--colors-effects-shadows-shadow-xs)", color: "var(--colors-text-text-secondary-700)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer"}} className="hv39">
+                      <button onClick={V.clearCand} style={{display: "inline-flex", alignItems: "center", gap: "8px", height: "40px", padding: "0 16px", borderRadius: "8px", border: "1px solid var(--border)", background: "var(--colors-background-bg-primary)", color: "var(--ink)", fontSize: "14px", lineHeight: "20px", fontWeight: "600", cursor: "pointer", whiteSpace: "nowrap"}} className="hv39">
                         {"Clear filters"}
                       </button>
                     </div>
