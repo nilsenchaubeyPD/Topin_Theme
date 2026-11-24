@@ -45,7 +45,7 @@ class Component extends DCLogic {
       this._tipEl = el;
       if (!el || !el.getAttribute('data-tip')) return this.setState({gtip:null});
       const r = el.getBoundingClientRect();
-      this.setState({gtip:{text:el.getAttribute('data-tip'), side:el.getAttribute('data-tip-side') || 'top', l:r.left, t:r.top, b:r.bottom, ri:r.right, cx:r.left + r.width / 2, cy:r.top + r.height / 2}});
+      this.setState({gtip:{text:el.getAttribute('data-tip'), side:el.getAttribute('data-tip-side') || 'top', l:r.left, t:r.top, b:r.bottom, ri:r.right, cx:r.left + r.width / 2, cy:r.top + r.height / 2}}, () => { const t = document.querySelector('[role="tooltip"]'); if (!t || !this.state.gtip || this.state.gtip.side === 'right') return; const b = t.getBoundingClientRect(), pad = 8; let dx = 0; if (b.right > window.innerWidth - pad) dx = window.innerWidth - pad - b.right; if (b.left + dx < pad) dx = pad - b.left; if (dx) this.setState(st => st.gtip ? {gtip:{...st.gtip, dx}} : null); });
     };
     this._hideTip = () => { this._tipEl = null; this.state.gtip && this.setState({gtip:null}); };
     document.addEventListener('mouseover', this._over);
@@ -150,8 +150,8 @@ class Component extends DCLogic {
     const gtip = !g ? null : g.side === 'right'
       ? {text:g.text, left:(g.ri + 10) + 'px', top:g.cy + 'px', transform:'translateY(-50%)', al:'-4px', at:'50%', ab:'auto', ml:'0px', mt:'-4px'}
       : g.side === 'bottom'
-      ? {text:g.text, left:Math.min(g.cx, window.innerWidth - 60) + 'px', top:(g.b + 8) + 'px', transform:'translateX(-50%)', al:'50%', at:'-4px', ab:'auto', ml:'-4px', mt:'0px'}
-      : {text:g.text, left:g.cx + 'px', top:(g.t - 8) + 'px', transform:'translate(-50%,-100%)', al:'50%', at:'auto', ab:'-4px', ml:'-4px', mt:'0px'};
+      ? {text:g.text, left:(g.cx + (g.dx || 0)) + 'px', top:(g.b + 8) + 'px', transform:'translateX(-50%)', al:'calc(50% - ' + (g.dx || 0) + 'px)', at:'-4px', ab:'auto', ml:'-4px', mt:'0px'}
+      : {text:g.text, left:(g.cx + (g.dx || 0)) + 'px', top:(g.t - 8) + 'px', transform:'translate(-50%,-100%)', al:'calc(50% - ' + (g.dx || 0) + 'px)', at:'auto', ab:'-4px', ml:'-4px', mt:'0px'};
     return { themeSwitch,
       gtip, sideTip: collapsed ? 'Expand sidebar' : 'Collapse sidebar', sideTipSide: collapsed ? 'right' : 'bottom',
       expanded: !collapsed, collapsed, sideW: collapsed ? '64px' : '280px', collapseBtnW: collapsed ? '32px' : '40px',
