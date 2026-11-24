@@ -1862,7 +1862,7 @@ Component.prototype.render = function render() {
                     {" "}
                     <div style={{display: "flex", gap: "12px"}}>
                       {" "}
-                      <label style={{position: "relative", width: "240px", height: "40px", display: "block"}}>
+                      <label style={{position: "relative", width: "320px", maxWidth: "100%", height: "40px", display: "block"}}>
                         {" "}
                         <span style={{position: "absolute", left: "12px", top: "10px", color: "var(--muted)", display: "flex"}}>
                           <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
