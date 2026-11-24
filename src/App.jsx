@@ -1922,11 +1922,8 @@ Component.prototype.render = function render() {
                     {" "}
                   </div>
                   {" "}
-                  <div style={{display: "grid", gridTemplateColumns: "72px 2fr 1.3fr 1.2fr 1.1fr 72px", height: "43px", background: "var(--subtle)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", fontSize: "12px", lineHeight: "18px", fontWeight: "500", color: "var(--muted)"}}>
+                  <div style={{display: "grid", gridTemplateColumns: "2fr 1.3fr 1.2fr 1.1fr 96px", height: "43px", background: "var(--subtle)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", fontSize: "12px", lineHeight: "18px", fontWeight: "500", color: "var(--muted)"}}>
                     {" "}
-                    <div style={{padding: "12px 20px"}}>
-                      {"S.No"}
-                    </div>
                     <div style={{padding: "12px 20px"}}>
                       {"Candidate"}
                     </div>
@@ -1939,7 +1936,7 @@ Component.prototype.render = function render() {
                     <div style={{padding: "12px 20px"}}>
                       {"Status"}
                     </div>
-                    <div style={{padding: "12px 20px"}}>
+                    <div style={{padding: "12px 20px", textAlign: "center"}}>
                       {"Actions"}
                     </div>
                     {" "}
@@ -1947,11 +1944,7 @@ Component.prototype.render = function render() {
                   {" "}
                   {(V.candidates || []).map((c, c$i) => (<React.Fragment key={c$i}>
                     {" "}
-                    <div style={{display: "grid", gridTemplateColumns: "72px 2fr 1.3fr 1.2fr 1.1fr 72px", height: "64px", alignItems: "center", borderTop: c.divider}} className="hv37">
-                      {" "}
-                      <div style={{padding: "0 20px", color: "var(--muted)"}}>
-                        {I(c.sno)}
-                      </div>
+                    <div style={{display: "grid", gridTemplateColumns: "2fr 1.3fr 1.2fr 1.1fr 96px", height: "64px", alignItems: "center", borderTop: c.divider}} className="hv37">
                       {" "}
                       <div style={{padding: "0 20px", display: "flex", alignItems: "center", gap: "12px", minWidth: "0"}}>
                         {" "}
@@ -1999,7 +1992,7 @@ Component.prototype.render = function render() {
                         {" "}
                       </div>
                       {" "}
-                      <div style={{padding: "0 20px", display: "flex"}}>
+                      <div style={{padding: "0 20px", display: "flex", justifyContent: "center"}}>
                         {" "}
                         <button aria-label="View candidate details" data-tip="View candidate details" style={{width: "36px", height: "36px", borderRadius: "8px", border: "none", background: "transparent", color: "var(--muted)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer"}} className="hv38">
                           <svg width="20" height="20" viewBox="-1.333 -1.333 26.667 26.667" style={{flex: "none", fill: "currentColor"}}>
